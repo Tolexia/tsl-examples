@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build"
   },
@@ -12,6 +14,7 @@
     "vite-plugin-restart": "^0.4.0"
   },
   "dependencies": {
+    "gh-pages": "^6.1.1",
     "lil-gui": "^0.19.2",
     "three": "^0.168.0",
     "vite-plugin-top-level-await": "^1.4.1"

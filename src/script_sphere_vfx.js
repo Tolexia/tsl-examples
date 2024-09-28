@@ -176,7 +176,7 @@ emissiveMaterial.outputNode = tslFn(() => {
     // Outer fade
     const outerFade = min(
         uv().y.smoothstep(0, 0.1),
-        uv().y.smoothstep(1, 0.6)
+        uv().y.smoothstep(0, 1)
     )
 
     // Effect
@@ -229,7 +229,7 @@ darkMaterial.outputNode = tslFn(() => {
     // Outer fade
     const outerFade = min(
         uv().y.smoothstep(0, 0.2),
-        uv().y.smoothstep(1, 0.6)
+        uv().y.smoothstep(0.45, 1)
     )
 
     // Effect

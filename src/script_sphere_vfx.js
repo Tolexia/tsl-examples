@@ -70,8 +70,8 @@ const luminance = tslFn(([color]) => {
 /**
  * Global
  */
-const emissiveColor = uniform(color('#ff8b4d'))
-const timeScale = uniform(0.1)
+const emissiveColor = uniform(color('#ffac4d'))
+const timeScale = uniform(0.05)
 
 // Geometry
 const sphereGeometry = new THREE.SphereGeometry(0.5, 64, 64)
@@ -187,7 +187,7 @@ emissiveMaterial.outputNode = tslFn(() => {
     // Output
     return vec4(
         emissiveColor.mul(1.2).div(emissiveColorLuminance), // Emissive
-        effect.smoothstep(0, 0.1) // Alpha
+        effect.smoothstep(0, 0.075) // Alpha
     )
 })()
 
@@ -228,8 +228,8 @@ darkMaterial.outputNode = tslFn(() => {
 
     // Outer fade
     const outerFade = min(
-        uv().y.smoothstep(0, 0.2),
-        uv().y.smoothstep(0.45, 1)
+        uv().y.smoothstep(0, 0.1),
+        uv().y.smoothstep(0.1, 1)
     )
 
     // Effect
@@ -237,7 +237,7 @@ darkMaterial.outputNode = tslFn(() => {
 
     return vec4(
         vec3(0),
-        effect.smoothstep(0, 0.01)
+        effect.smoothstep(0, 0.1)
     )
 })()
 
